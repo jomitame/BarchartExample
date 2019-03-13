@@ -13,7 +13,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class BarChartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        BarChart chart = (BarChart) findViewById(R.id.barchart);
+        com.github.mikephil.charting.charts.BarChart chart = (com.github.mikephil.charting.charts.BarChart) findViewById(R.id.barchart);
 
         BarData data = new BarData(getXAxisValues(), getDataSet());
 
@@ -80,20 +80,19 @@ public class MainActivity extends AppCompatActivity {
         BarEntry v1vv6 = new BarEntry(100.000f, 5); // Jun
         valueSet3.add(v1vv6);
 
-        BarDataSet barDataSet1 = new BarDataSet(valueSet1, "Brand 1");
+        BarDataSet barDataSet1 = new BarDataSet(valueSet1, "Pending Issue");
         barDataSet1.setColor(Color.rgb(0, 155, 0));
 
-        BarDataSet barDataSet2 = new BarDataSet(valueSet2, "Brand 2");
+        BarDataSet barDataSet2 = new BarDataSet(valueSet2, "Rejected Issue");
         barDataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        BarDataSet barDataSet3 = new BarDataSet(valueSet2, "Brand 2");
+        BarDataSet barDataSet3 = new BarDataSet(valueSet2, "Approved Issue");
         barDataSet3.setColors(ColorTemplate.JOYFUL_COLORS);
 
         dataSets = new ArrayList<>();
         dataSets.add(barDataSet1);
         dataSets.add(barDataSet2);
         dataSets.add(barDataSet3);
-
 
         return dataSets;
     }
@@ -106,13 +105,6 @@ public class MainActivity extends AppCompatActivity {
         xAxis.add("APR");
         xAxis.add("MAY");
         xAxis.add("JUN");
-        xAxis.add("JUN");
-        xAxis.add("JUN");
-        xAxis.add("JUN");
-        xAxis.add("JUN");
-        xAxis.add("JUN");
-
-
         return xAxis;
     }
 
