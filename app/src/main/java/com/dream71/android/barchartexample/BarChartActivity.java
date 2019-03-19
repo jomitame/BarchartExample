@@ -38,6 +38,7 @@ public class BarChartActivity extends AppCompatActivity {
         ArrayList<BarDataSet> dataSets = null;
 
         ArrayList<BarEntry> valueSet1 = new ArrayList<>();
+
         BarEntry v1e1 = new BarEntry(110.000f, 0); // Jan
         valueSet1.add(v1e1);
         BarEntry v1e2 = new BarEntry(40.000f, 1); // Feb
@@ -50,6 +51,8 @@ public class BarChartActivity extends AppCompatActivity {
         valueSet1.add(v1e5);
         BarEntry v1e6 = new BarEntry(100.000f, 5); // Jun
         valueSet1.add(v1e6);
+
+
 
         ArrayList<BarEntry> valueSet2 = new ArrayList<>();
         BarEntry v2e1 = new BarEntry(150.000f, 0); // Jan
@@ -64,6 +67,8 @@ public class BarChartActivity extends AppCompatActivity {
         valueSet2.add(v2e5);
         BarEntry v2e6 = new BarEntry(80.000f, 5); // Jun
         valueSet2.add(v2e6);
+
+
 
 
         ArrayList<BarEntry> valueSet3 = new ArrayList<>();

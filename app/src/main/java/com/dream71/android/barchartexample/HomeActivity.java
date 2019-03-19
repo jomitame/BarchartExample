@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(HomeActivity.this, BarChartActivity.class);
+                Intent intent = new Intent(HomeActivity.this, BarchartRetrofit.class);
                 startActivity(intent);
             }
         });

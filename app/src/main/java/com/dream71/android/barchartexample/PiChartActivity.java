@@ -27,6 +27,7 @@ public class PiChartActivity extends AppCompatActivity {
         PieChart pieChart = findViewById(R.id.piechart);
         ArrayList NoOfEmp = new ArrayList();
 
+
         NoOfEmp.add(new Entry(945f, 0));
         NoOfEmp.add(new Entry(1040f, 1));
         NoOfEmp.add(new Entry(1133f, 2));
@@ -35,10 +36,11 @@ public class PiChartActivity extends AppCompatActivity {
         dataSet.setValueTextSize(20);
 
         ArrayList year = new ArrayList();
-
         year.add("2008");
         year.add("2009");
         year.add("2010");
+
+
 
         PieData data = new PieData(year, dataSet);
         pieChart.setData(data);
