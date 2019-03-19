@@ -25,6 +25,9 @@ public class PiChartActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         PieChart pieChart = findViewById(R.id.piechart);
+
+
+
         ArrayList NoOfEmp = new ArrayList();
 
 

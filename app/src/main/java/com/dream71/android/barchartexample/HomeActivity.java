@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         piChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, PiChartActivity.class);
+                Intent intent = new Intent(HomeActivity.this, PiChartRetrofit.class);
                 startActivity(intent);
             }
         });

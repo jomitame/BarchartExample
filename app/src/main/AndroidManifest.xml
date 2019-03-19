@@ -32,6 +32,10 @@
         <activity
             android:name=".BarchartRetrofit"
             android:label="@string/title_activity_barchart_retrofit"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PiChartRetrofit"
+            android:label="@string/title_activity_pi_chart_retrofit"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -4,4 +4,5 @@
     <string name="title_activity_pi_chart">PiChartActivity</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_barchart_retrofit">BarchartRetrofit</string>
+    <string name="title_activity_pi_chart_retrofit">PiChartRetrofit</string>
 </resources>

@@ -4,82 +4,81 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class PieStatistics {
-
     @SerializedName("assigned")
     @Expose
-    private Assigned assigned;
+    private int assigned;
     @SerializedName("opened")
     @Expose
-    private Opened opened;
+    private int opened;
     @SerializedName("in-progress")
     @Expose
-    private InProgress inProgress;
+    private int inProgress;
     @SerializedName("completed")
     @Expose
-    private Complete complete;
+    private int completed;
     @SerializedName("done")
     @Expose
-    private Done done;
+    private int done;
     @SerializedName("rejected")
     @Expose
-    private Rejected rejected;
+    private int rejected;
     @SerializedName("expired")
     @Expose
-    private Expired expired;
+    private int expired;
 
-    public Assigned getAssigned() {
+    public int getAssigned() {
         return assigned;
     }
 
-    public void setAssigned(Assigned assigned) {
+    public void setAssigned(int assigned) {
         this.assigned = assigned;
     }
 
-    public Opened getOpened() {
+    public int getOpened() {
         return opened;
     }
 
-    public void setOpened(Opened opened) {
+    public void setOpened(int opened) {
         this.opened = opened;
     }
 
-    public InProgress getInProgress() {
+    public int getInProgress() {
         return inProgress;
     }
 
-    public void setInProgress(InProgress inProgress) {
+    public void setInProgress(int inProgress) {
         this.inProgress = inProgress;
     }
 
-    public Complete getComplete() {
-        return complete;
+    public int getCompleted() {
+        return completed;
     }
 
-    public void setComplete(Complete complete) {
-        this.complete = complete;
+    public void setCompleted(int completed) {
+        this.completed = completed;
     }
 
-    public Done getDone() {
+    public int getDone() {
         return done;
     }
 
-    public void setDone(Done done) {
+    public void setDone(int done) {
         this.done = done;
     }
 
-    public Rejected getRejected() {
+    public int getRejected() {
         return rejected;
     }
 
-    public void setRejected(Rejected rejected) {
+    public void setRejected(int rejected) {
         this.rejected = rejected;
     }
 
-    public Expired getExpired() {
+    public int getExpired() {
         return expired;
     }
 
-    public void setExpired(Expired expired) {
+    public void setExpired(int expired) {
         this.expired = expired;
     }
 }
