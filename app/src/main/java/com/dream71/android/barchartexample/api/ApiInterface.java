@@ -13,6 +13,7 @@ import retrofit2.http.Header;
 
 public interface ApiInterface {
 
-    @GET("init")
-    Call<PiChart> init(@Header("Authorization") String token);
+    @GET("chart.json")
+    Call<PiChart> init();
+
 }

@@ -31,7 +31,7 @@ public class ApiClient {
                      *  base url here for api
                      */
 
-                    .baseUrl("http://madina.itracker71.com/api/v1/")
+                    .baseUrl("https://raw.githubusercontent.com/paveltech/BarchartExample/master/")
                     .build();
         }
         return retrofit;

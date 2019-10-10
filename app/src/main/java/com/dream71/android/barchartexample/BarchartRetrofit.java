@@ -42,7 +42,7 @@ public class BarchartRetrofit extends AppCompatActivity {
 
 
     private void getData() {
-        Call<PiChart> piChartCall = apiInterface.init("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc4MzRjZDk3MDczYmYxN2Q3Y2VmNDRhNDE5NDJmNzMxYTYxYmRjNzQwOTVmZDk0MjNkMzU1NDdmMjAyMWEzMzMxZTZmODZiM2RlMTM2ZTUzIn0.eyJhdWQiOiIxIiwianRpIjoiNzgzNGNkOTcwNzNiZjE3ZDdjZWY0NGE0MTk0MmY3MzFhNjFiZGM3NDA5NWZkOTQyM2QzNTU0N2YyMDIxYTMzMzFlNmY4NmIzZGUxMzZlNTMiLCJpYXQiOjE1NTI5NzkzMjksIm5iZiI6MTU1Mjk3OTMyOSwiZXhwIjoxNTg0NjAxNzI5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.bBt0plE7WElpV1MRYpfzko4fHYumIXmqYd6BRaHI4xGa6GHeS_bnc4Li-X9FvC0A0AMArLd0kuXDjqVOtlAEsj6C-kZ8QI-zkyCAYSp8Mjh3h1WVewOX4RBvk3oLH0Xr9oka7mqcLFLn0Mx9ETw8XEAVBLIH9QouJySymQ4X5h4vhaQb-1mAggk4urKBQRsGkwD7JYrGEmAlEq6pnnbnT_GHz2CI3dxr6OQyVPukrYC24PbimLLYeFdVF6C3HSoS45rsf08Kr-j3ChNUeLhg0BMNf8Ey7bXdKHJOJug43Co7ir-lYQioMrbLjfcaQsfsRPT1Ik1fDXpf4F8GRgwyncazc71Y7LPbQV3_8pGaqFFPz__q-ytxUnlS7mP1k0XMiqMiDXfq_uJCpfCgfn7z7bBAf1Fr5comU_GBw7y3Kh0qkAsT4bFejNGQfvx4BXN0Z1Vkkm0gqzflXQW3O3WqP27nx6CrmPzxzXuk0sSaKa00XxHPK5IC9u_2ye6OYj2D0CUbk0pqPVINAfYwyJVv3A_lf_drX0YU5J8UOgNVlZUFjN9WqVToxHN-Qs-Q8qORPd_UJuL4DQYUp0k5nowo1-hz6Ulx8Vt-LDtsjakBsXD81p9Tj5aw2a-U7rcl57aubtSldB1HY-tKA1mBUADm1a7ARyPEdPNQA8flJjDZJOE");
+        Call<PiChart> piChartCall = apiInterface.init();
         piChartCall.enqueue(new Callback<PiChart>() {
             @Override
             public void onResponse(Call<PiChart> call, Response<PiChart> response) {
