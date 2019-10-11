@@ -36,6 +36,10 @@ public class BarchartRetrofit extends AppCompatActivity {
         setSupportActionBar(toolbar);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
+        /**
+         *  api call to get some data from server
+         *
+         */
         getData();
 
     }
@@ -58,40 +62,70 @@ public class BarchartRetrofit extends AppCompatActivity {
     }
 
 
+    /**
+     *  Set data into pie chart
+     * @param piChart
+     */
+
     private void setData(PiChart piChart) {
 
         ArrayList<BarDataSet> dataSets = null;
 
         ArrayList<BarEntry> completed = new ArrayList<>();
 
+
+        /**
+         *  Getting the value for Complete list
+         */
+
         for (int i = 0; i < piChart.getBarCompleted().size(); i++) {
             BarEntry value = new BarEntry(piChart.getBarCompleted().get(i), i); // Jan
             completed.add(value);
         }
 
+
+        /**
+         *  Add complete data into the bar chart
+         */
+
         BarDataSet completeData = new BarDataSet(completed, "Completed Issue");
         completeData.setColor(Color.rgb(0, 155, 0));
 
 
-        ArrayList<BarEntry> pending = new ArrayList<>();
+        /**
+         *  Getting Pending data
+         */
 
+        ArrayList<BarEntry> pending = new ArrayList<>();
         for (int i = 0; i < piChart.getBarCompleted().size(); i++) {
             BarEntry value = new BarEntry(piChart.getBarPending().get(i), i); // Jan
             pending.add(value);
         }
 
+        /**
+         *  adding pending data into the bar chart
+         */
+
         BarDataSet pendingdata = new BarDataSet(pending, "Pending Issue");
         pendingdata.setColor(Color.rgb(253, 129, 0));
 
 
-        ArrayList<BarEntry> rejected = new ArrayList<>();
+        /**
+         *  Getting rejected data from the api
+         */
 
+        ArrayList<BarEntry> rejected = new ArrayList<>();
         for (int i = 0; i < piChart.getBarCompleted().size(); i++) {
             BarEntry value = new BarEntry(piChart.getBarRejected().get(i), i); // Jan
             rejected.add(value);
         }
 
-        BarDataSet rejectedData = new BarDataSet(pending, "Rejected Issue");
+
+        /**
+         *  set rejected data into
+         */
+
+        BarDataSet rejectedData = new BarDataSet(rejected, "Rejected Issue");
         pendingdata.setColor(Color.rgb(255, 0, 0));
 
 

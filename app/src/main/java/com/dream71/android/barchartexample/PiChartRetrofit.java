@@ -27,12 +27,16 @@ public class PiChartRetrofit extends AppCompatActivity {
         setContentView(R.layout.activity_pi_chart);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         apiCall();
 
     }
 
 
+    /**
+     *  Api call for retriving data for pie chart
+     */
     private void apiCall() {
         Call<PiChart> piChartCall = apiInterface.init();
         piChartCall.enqueue(new Callback<PiChart>() {
@@ -48,35 +52,52 @@ public class PiChartRetrofit extends AppCompatActivity {
         });
     }
 
+
+    /**
+     *  Set Data Into the pie chart
+     * @param piChart
+     */
+
     private void setData(PiChart piChart) {
 
         PieChart pieChartList = findViewById(R.id.piechart);
 
-        ArrayList NoOfEmp = new ArrayList();
+
+        /**
+         *  get Data for pie chart
+         */
+
+        ArrayList pieChartData = new ArrayList();
+        pieChartData.add(new Entry(piChart.getPieStatistics().getAssigned(), 0));
+        pieChartData.add(new Entry(piChart.getPieStatistics().getOpened(), 1));
+        pieChartData.add(new Entry(piChart.getPieStatistics().getInProgress(), 2));
+        pieChartData.add(new Entry(piChart.getPieStatistics().getCompleted(), 3));
+        pieChartData.add(new Entry(piChart.getPieStatistics().getDone(), 4));
 
 
-        NoOfEmp.add(new Entry(piChart.getPieStatistics().getAssigned(), 0));
-        NoOfEmp.add(new Entry(piChart.getPieStatistics().getOpened(), 1));
-        NoOfEmp.add(new Entry(piChart.getPieStatistics().getInProgress(), 2));
-        NoOfEmp.add(new Entry(piChart.getPieStatistics().getCompleted(), 3));
-        NoOfEmp.add(new Entry(piChart.getPieStatistics().getDone(), 4));
-
-
-        PieDataSet dataSet = new PieDataSet(NoOfEmp, "Issues");
+        PieDataSet dataSet = new PieDataSet(pieChartData, "");
         dataSet.setValueTextSize(14);
 
 
-        ArrayList chartData = new ArrayList();
-        chartData.add("Assigned");
-        chartData.add("Opened");
-        chartData.add("Completed");
-        chartData.add("Done");
-        chartData.add("Rejected");
+        /**
+         *  set segment for pie chart
+         */
+
+        ArrayList pieChartSectionName = new ArrayList();
+        pieChartSectionName.add("Assigned");
+        pieChartSectionName.add("Opened");
+        pieChartSectionName.add("Completed");
+        pieChartSectionName.add("Done");
+        pieChartSectionName.add("Rejected");
 
 
-        PieData data = new PieData(chartData, dataSet);
+        PieData data = new PieData(pieChartSectionName, dataSet);
         pieChartList.setData(data);
 
+
+        /**
+         *  Segment color added into the pie chart
+         */
 
         dataSet.setColors(new int[]{Color.parseColor("#9c27b0"),
                 Color.parseColor("#ef5350"),
@@ -84,7 +105,7 @@ public class PiChartRetrofit extends AppCompatActivity {
                 Color.parseColor("#2196f3"),
                 Color.parseColor("#7cb342")});
 
-        //dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+
 
         pieChartList.animateXY(500, 500);
 
